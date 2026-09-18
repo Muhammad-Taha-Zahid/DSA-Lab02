@@ -66,6 +66,10 @@ void runAllTests() {
 
 //implementation of isSorted function (the function tested)
 bool isSorted(const int* arr, const int size) {
+    if (size <= 1 || arr == nullptr) {
+        return true;
+    }
+    
     for (int i = 0; i < size - 1; ++i) {
         if (arr[i] > arr[i + 1]) {
             return false;
