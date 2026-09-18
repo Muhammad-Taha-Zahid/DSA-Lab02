@@ -34,6 +34,21 @@ void testNegativeValues() {
     assert(isSorted(arr, 5) == true);
 }
 
+// original test cases
+void testAllEqualElements() { //all equal values
+    int arr[] = {7, 7, 7, 7, 7}; 
+    assert(isSorted(arr, 5) == true);
+}
+
+void testUnsortedNegativeValues() { //unsorted negative values
+    int arr[] = {-2, -10, 0, 4};
+    assert(isSorted(arr, 4) == false);
+}
+
+void testEmptyArray() { //empty array with null pointer (most challenging to troubleshoot)
+    assert(isSorted(nullptr, 0) == true);
+}
+
 // run all test cases
 void runAllTests() {
     testSortedArray();
@@ -42,6 +57,9 @@ void runAllTests() {
     testSingleElement();
     testDescendingArray();
     testNegativeValues();
+    testAllEqualElements();
+    testUnsortedNegativeValues();
+    testEmptyArray();
     // will only print if all assertions pass, otherwise program will terminate on a failed assertion
     cout << "All TDD assertions passed successfully!" << endl;
 }
